@@ -8,7 +8,6 @@ template_dir = os.path.abspath('./')
 app = Flask(__name__, template_folder=template_dir)
 
 
-mail = Mail(app)
 app.config["MAIL_SERVER"] = 'smtp.gmail.com'
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USERNAME"] = 'username@gmail.com'
@@ -16,7 +15,7 @@ app.config['MAIL_PASSWORD'] = '*************'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 otp = randint(000000, 999999)
-
+mail = Mail(app)
 
 
 @app.route('/')
